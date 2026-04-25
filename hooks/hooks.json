@@ -1,0 +1,47 @@
+{
+  "description": "MDDesign orchestrator hooks. SessionStart prints orientation banner and detects planning + DESIGN.md. UserPromptSubmit nudges design-bridge on UI phases. PreToolUse surfaces HITL checkpoints for DESIGN.md and UI writes. Stop appends a handoff stamp.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start/preamble.ps1\" 2>/dev/null || bash \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start/preamble.sh\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/hooks/prompt-submit/enforce.ps1\" 2>/dev/null || bash \"${CLAUDE_PLUGIN_ROOT}/hooks/prompt-submit/enforce.sh\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); echo \"$INPUT\" | powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/hooks/pre-tool-use/gate.ps1\" 2>/dev/null || echo \"$INPUT\" | bash \"${CLAUDE_PLUGIN_ROOT}/hooks/pre-tool-use/gate.sh\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PLUGIN_ROOT}/hooks/stop/promote.ps1\" 2>/dev/null || bash \"${CLAUDE_PLUGIN_ROOT}/hooks/stop/promote.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

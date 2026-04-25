@@ -1,0 +1,35 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
+*.bak
+
+# Node
+node_modules/
+npm-debug.log*
+.npm/
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment
+.env
+.env.local
+
+# MDDesign artifacts that should never be checked in
+.agents/memory/scratch/
+
+# Test artifacts
+tests/.tmp/
+*.log

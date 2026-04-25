@@ -1,0 +1,12 @@
+{
+  "name": "mddesign",
+  "description": "Self-hosted marketplace for the MDDesign orchestrator plugin",
+  "owner": "OthmanAdi",
+  "plugins": [
+    {
+      "name": "mddesign",
+      "source": ".",
+      "description": "Orchestrator: planning + DESIGN.md fusion + memory + agent teams + session handoff"
+    }
+  ]
+}

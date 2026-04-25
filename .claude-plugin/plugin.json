@@ -1,0 +1,36 @@
+{
+  "name": "mddesign",
+  "version": "0.1.0",
+  "description": "Orchestrator plugin that weaves planning-with-files, DESIGN.md, memory routing, agent teams, and session handoff into one composable contract for any modern coding agent. Composes existing skills without altering their core. Includes code-to-DESIGN.md harvest and critique.",
+  "author": {
+    "name": "Othman Adi",
+    "url": "https://github.com/OthmanAdi"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "design-md",
+    "planning-with-files",
+    "memory",
+    "subagents",
+    "human-in-the-loop",
+    "orchestrator",
+    "claude-code",
+    "cursor",
+    "codex",
+    "antigravity",
+    "google-design-md",
+    "harvest",
+    "critique"
+  ],
+  "homepage": "https://github.com/OthmanAdi/MDDesign",
+  "repository": "https://github.com/OthmanAdi/MDDesign",
+  "companions": {
+    "required": [
+      "planning-with-files",
+      "code-memory-router"
+    ],
+    "optional": [
+      "@google/design.md"
+    ]
+  }
+}

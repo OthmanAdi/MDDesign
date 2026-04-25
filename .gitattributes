@@ -1,0 +1,10 @@
+# Force LF for shell scripts so they run on Linux/macOS
+*.sh text eol=lf
+*.py text eol=lf
+
+# PowerShell scripts use CRLF on Windows
+*.ps1 text eol=crlf
+
+# Markdown and JSON: let git auto-detect
+*.md text
+*.json text
