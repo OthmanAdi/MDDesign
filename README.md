@@ -1,3 +1,5 @@
+<img src="banner.png" alt="MDDesign" width="100%">
+
 # MDDesign
 
 > Glue layer for AI coding agents. Composes planning-with-files, Google's DESIGN.md, memory routing, agent teams, and session handoff into one orchestrator. Cross-IDE. No replacements.
